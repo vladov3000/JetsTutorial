@@ -46,7 +46,6 @@ def findPseudoJets(E,px,py,x0=0,y0=0,level=0,angle=0):
     z=findz()
     E1=E*z
     E2=E-E1
-    #this may be wrong:
     p1=p*np.sqrt(z)
     p2=p-p1
 
@@ -58,7 +57,7 @@ def findPseudoJets(E,px,py,x0=0,y0=0,level=0,angle=0):
     #plot energy/momentum/velocity
     #plt.scatter(level,E)
     #plt.scatter(level,p)
-    #plt.scatter(level,v)
+    plt.scatter(level,v)
 
     return findPseudoJets(E1,p1x,p1y,x1,y1,level+1,newAngle1)+findPseudoJets(E2,p2x,p2y,x1,y1,level+1,newAngle2)
 
@@ -78,7 +77,7 @@ print(P)
 
 
 #displacement vectors
-for vector in coordinates:
-    plt.plot([vector[0], vector[2]], [vector[1], vector[3]]) #unfold list into plot's arguments
+#for vector in coordinates:
+#    plt.plot([vector[0], vector[2]], [vector[1], vector[3]]) #unfold list into plot's arguments
 
 plt.show()
